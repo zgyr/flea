@@ -35,13 +35,13 @@ local function get_filesystem()
   error('filesystem not found')
 end
 
-local function fs_write(path, mode, data)
+function fs_write(path, mode, data)
   local handle = filesystem.open(path, mode)
   filesystem.write(handle, data)
   filesystem.close(handle)
 end
 
-local function fs_read(path)
+function fs_read(path)
   local handle = filesystem.open(path)
   local buffer = ''
   repeat
